@@ -50,7 +50,13 @@ powers of 2.
 
 The Reflected Binary Gray code for a binary number x can be given by:
 
-> G<sub>n</sub> = B<sub>n</sub>⊕⌊B<sub>n</sub>/2⌋
+> G<sub>n</sub> = B<sub>n</sub>
+>
+> G<sub>n-1</sub> = B<sub>n-1</sub>⊕B<sub>n</sub>
+>
+> G<sub>1</sub> = B<sub>1</sub>⊕B<sub>2</sub>
+>
+> G<sub>0</sub> = B<sub>0</sub>⊕B<sub>1</sub>
 
 The module inputs and outputs are unregistered.
 
