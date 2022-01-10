@@ -38,11 +38,6 @@ The cr_gray2bin module performs the inverse function of this module.
 -----
 ### Theory of Operation
 
-#### Patents
-
-[US785697A](https://patents.google.com/patent/US2632058A/en)
-Inventor: Frank Gray @ AT&T Corp. **Expired**
-
 #### Functional Description
 
 This module provides a simple conversion from binary to a Standard Reflected
@@ -71,7 +66,7 @@ The repo is: cr_bin2gray_test **@todo**
 
 The simulation of the module only tests a few possible instantiations of the
 module. The algorithm used is proved in several papers that are available with
-a simple search. The earlier referenced expired patent also provides additional
+a simple search. The referenced expired patent also provides additional
 information.
 
 -----
@@ -81,6 +76,14 @@ information.
 Copyright 2021, Luke E. McKay.
 SPDX-License-Identifier: Apache-2.0
 ```
+
+#### Patents
+
+Since this patent is expired it is believed that no patent license is required.
+I do not hold rights to this patent.
+
+[US785697A](https://patents.google.com/patent/US2632058A/en)
+Inventor: Frank Gray @ AT&T Corp. **Expired**
 
 -----
 ### Technical Support & Feedback
