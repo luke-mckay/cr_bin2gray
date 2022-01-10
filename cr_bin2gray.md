@@ -5,64 +5,74 @@
 -----
 ### Overview
 
-Binary to Gray Code Conversion
+Gray codes are non-weighted codes, where two successive values differ only on
+one bit. This module provides a method to convert a binary code input into a
+gray code output.
 
 #### Version
 
-0.1.0_pre-alpha
+0.1.1_pre-alpha
 
 ##### History
 
-02JAN22 - Created
+- 02JAN22 - Created
+- 09JAN22 - Add compile time parameter check, update documentation
 
 #### Features
 
-- list features **@todo**
+- Parameterized code width
 
 #### Parameters
 
-- pWidth     - *Datapath Width, RAM Word Width*
+- pWidth  - *Width of Codes*
 
 #### Ports
 
-- G  - *Gray Code Input*
-- B  - *Binary Code Output*
+- B  - *Binary Code Input*
+- G  - *Gray Code Output*
+
+#### Related Module(s)
+
+The cr_gray2bin module performs the inverse function of this module.
 
 -----
 ### Theory of Operation
 
+#### Patents
+
+[US785697A](https://patents.google.com/patent/US2632058A/en)
+Inventor: Frank Gray @ AT&T Corp. **Expired**
+
 #### Functional Description
 
-**@todo** functionality
+This module provides a simple conversion from binary to a Standard Reflected
+Binary Gray code. A Gray code representation is where for any integer X the bit
+representation is Hamming distance 1 away from the bit represenation of X+1 as
+well as from X-1.
 
-#### Block Diagram
+This module (and all SRBG codes) conversion only works for widths that are
+powers of 2.
 
-**@todo**
+The Reflected Binary Gray code for a binary number x can be given by:
 
-#### Timing Diagram(s)
+> G<sub>n</sub> = B<sub>n</sub>⊕⌊B<sub>n</sub>/2⌋
 
-**@todo**
-
-#### Timing Constraints
-
-**@todo**
+The module inputs and outputs are unregistered.
 
 -----
 ### Verification / Simulation
 
-Verification / simulation of the core is documented in a different repo. This
-other repo may also contain validation instantiations for supported
-technologies. Note that this 'test' repo is under a different license.
+Verification / simulation of the core is in a different repo. Note that this
+'test' repo is under a different license.
 
 The repo is: cr_bin2gray_test **@todo**
 
-### Supported Technologies
+### Proof
 
-**@todo** techs
-
-#### Utilization & Performance
-
-**@todo** utilization and performance
+The simulation of the module only tests a few possible instantiations of the
+module. The algorithm used is proved in several papers that are available with
+a simple search. The earlier referenced expired patent also provides additional
+information.
 
 -----
 ### Copyright & License

@@ -16,7 +16,7 @@
  */
 
 /** Binary to Gray Code Conversion
- *  Version 0.1.0
+ *  Version 0.1.1
  */
 module cr_bin2gray
 #(
@@ -28,6 +28,13 @@ module cr_bin2gray
   input  wire [pWidth-1:0] B, //!< Binary Input
   output wire [pWidth-1:0] G  //!< Gray Code Output
 );
+
+generate
+  if (pWidth < 2)
+  begin
+    cr_bin2gray_ERROR_invalid_pWidth invalid_pWidth();  // @toTest
+  end  // @todo need to make sure that it is only power of 2, not just >2
+endgenerate
 
 assign G = (B >> 1) ^ B;
 
